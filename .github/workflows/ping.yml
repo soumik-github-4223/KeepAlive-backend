@@ -1,0 +1,14 @@
+name: Keep Render API Awake
+
+on:
+  schedule:
+    - cron: '*/14 * * * *'  # Every 14 minutes
+  workflow_dispatch:
+
+jobs:
+  curl-website:
+    runs-on: ubuntu-latest
+ 
+    steps:
+      - name: Run cURL on Website
+        run: curl -I https://keepalive-backend.onrender.com/api/urls
