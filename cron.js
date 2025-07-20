@@ -4,7 +4,7 @@ const Url = require('./models/Url');
 
 // Ping every 10 minutes
 function startPinger() {
-  cron.schedule('*/10 * * * *', async () => {
+  cron.schedule('*/13 * * * *', async () => {
     const urls = await Url.find({});
     console.log(`Pinging ${urls.length} URLs...`);
     for (let { url } of urls) {
